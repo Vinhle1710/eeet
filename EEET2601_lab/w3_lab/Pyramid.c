@@ -7,23 +7,14 @@ int main(){
     int num, a, b, c;
     printf("Enter a number between 1 and 15: ");
     scanf("%d",&num);
-    
-  for (int i = 1; i <= num; i++) {
-    for (int j = 1; j <= i; j++) {
-      printf("*");
+    for ( a = 1; a < num; a++)
+    {
+        printf("   ");
+        for(b = 1; b < num -a ; b++){
+            printf("%2d", a);
+            
+        }
+        printf("\n");
     }
-    printf("\n");
-  }
-
-    // for (int i = 0; i <= num; i++){
-    //     for(a = 1; a <= num - i; a++){
-
-    //     }
-    // }
-    // for (int i = 0; i < num - i; i++)
-    // {
-    //     /* code */
-    // }
-    
     
 }
