@@ -1,20 +1,24 @@
 /*Prompt the user to enter an integer between 1 and 15. Assume that the user always enters
 valid value. Display a pyramid pattern accordingly*/
 
-#include <stdio.h>
 
-int main(){
-    int num, a, b, c;
-    printf("Enter a number between 1 and 15: ");
-    scanf("%d",&num);
-    for ( a = 1; a < num; a++)
-    {
-        printf("   ");
-        for(b = 1; b < num -a ; b++){
-            printf("%2d", a);
-            
+#include <stdio.h>
+int main () {
+    int num = 0;
+    while (num < 1 || num > 15){
+        printf("Enter an integer between 1 and 15:");
+        scanf("%d", &num);
+    }
+    for (int r = 1; r <= num; r++){
+        for (int i = 0; i <= num - r; i++){
+            printf("   ");
+        }
+        for (int i = r; i >= 1; i--){
+            printf("%2d ", i);
+        }
+        for (int i = 2; i <= r; i++){
+            printf("%2d ", i);
         }
         printf("\n");
     }
-    
 }
