@@ -23,20 +23,20 @@ int main(){
     printf("\n");
 
     //print the rest
-    for (int r = 2; r <= num; r++)
+    for (int row = 2; row <= num; row++)
     {
-        for (int j = r; j > 0; j--)
+        for (int j = row; j > 0; j--)
         {
             printf("%3d ", j);
         }
 
-        for (int i = 2; i <= num + 1 - r; i++)
+        for (int i = 2; i <= num + 1 - row; i++)
         {
-            if (i == num + 1 - r)
+            if (i == num + 1 - row)
             {
                 printf("%3d ", i);
             } else {
-                printf("    ");
+                printf("    ",i);
             }
         }
         printf("\n");
