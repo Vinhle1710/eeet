@@ -30,15 +30,14 @@ int main(){
             printf("%3d ", j);
         }
 
-        for (int l = 2; l <= num + 1 - r; l++)
+        for (int i = 2; i <= num + 1 - r; i++)
         {
-            if (l == num + 1 - r)
+            if (i == num + 1 - r)
             {
-                printf("%3d ", l);
+                printf("%3d ", i);
             } else {
                 printf("    ");
             }
-            
         }
         printf("\n");
     }
