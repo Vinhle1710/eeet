@@ -9,7 +9,7 @@ int main(){
     // a) Create an array of 5 random integers between 30 and 100 inclusively.
 
     //Initialize random number generator
-    srand (time NULL);
+    srand (time (NULL));
 
     //plug 5 random intergers into arr
     for (int i = 0; i < SIZE; i++)

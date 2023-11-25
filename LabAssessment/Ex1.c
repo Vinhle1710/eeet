@@ -1,3 +1,15 @@
+/*
+  RMIT University Vietnam
+  Course: EEET2601 Engineering Computing 1
+  Semester: 2023-2
+  Lab Assessment: 1
+  Author: Le Pham Gia Vinh
+  ID: 3971155
+  Compiler used: gcc 8.1.0
+  Created  date: 24/11/2023
+  Acknowledgement: AsciiTable.com
+*/
+
 #include <stdio.h>
 
 int main(){

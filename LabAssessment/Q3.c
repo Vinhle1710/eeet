@@ -27,11 +27,13 @@ int main(){
     {
         for (int j = row; j > 0; j--)
         {
+            //Print the triangle on the left
             printf("%3d ", j);
         }
 
         for (int i = 2; i <= num + 1 - row; i++)
-        {
+        {   
+            //Print the descending column on the right
             if (i == num + 1 - row)
             {
                 printf("%3d ", i);
