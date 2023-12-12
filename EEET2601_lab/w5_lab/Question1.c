@@ -17,53 +17,33 @@ int main() {
 
             count ++; 
             
-            // if ( islower(str[i]) )
-            // {
+            if ( islower(str[i]) )
+            {
 
-            //     str[i] = toupper(str[i]);
+                str[i] = toupper(str[i]);
 
-            // } else {
+            } else {
 
-            //     str[i] = tolower(str[i]);
+                str[i] = tolower(str[i]);
 
-            // }
-
-            str[i] = islower(str[i]) ?      toupper(str[i])    :    tolower(str[i]);
-        //     condition             ?   do if condition true  :  do if condition false
+            }
             
         } else if ( isdigit (str[i]) ) {
 
             sum += (str[i] - 48) ;
 
         }
+
+        for (int j = 1; i < count; i++)
+        {
+            /* code */
+        }
         
     }
-
 
     printf("Number of alphabet characters: %d \n", count);
     printf("Converted string: %s\n", str);
     printf("Sum of digits: %d \n", sum);
-
-    int length = strlen(str);
-
-    for (int i = length - 1; i >= 0; i--)
-    {
-        printf("%c", str[i]);
-    }
-    printf("\n");
-    
-    int last = length - 1;
-
-    for (int first = 0; first < last; first++, last--)
-    {
-        int temp = str [first];
-        str[first] = str[last];
-        str[last] = temp;
-    }
-    
-
-    printf("Reverse string: %s\n", str);
-    
 
     return 0;
 }
