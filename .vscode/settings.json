@@ -60,7 +60,8 @@
     "limits": "c",
     "string_view": "c",
     "random": "c",
-    "array": "c"
+    "array": "c",
+    "algorithm": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

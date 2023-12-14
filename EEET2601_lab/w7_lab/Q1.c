@@ -33,13 +33,19 @@ int maximum(int array[], int size){
     return (max);
 }
 
-//Accept an array of integers, its size, and another integer. Return 1 if the integer is found in the array and 0 otherwise
-void find_value(int array[], int num){
+//Qd. Accept an array of integers, its size, and another integer. Return 1 if the integer is found in the array and 0 otherwise
+int find_value(int array[], int size){
+    int val;
+    printf("Enter a value: ");
+    scanf("%d", &val);
     for (int i = 0; i < size; i++)
     {
-        /* code */
+        if (val == array[i])
+        {
+            return 1;
+        } 
     }
-    
+    return 0;
 }
 
 int main(){
@@ -49,7 +55,14 @@ int main(){
     //Call function (array is pass by ADDRESS as a pointer)
     print_array(arr, SIZE);
     print_reverse(arr, SIZE);
-    int max = maximum(arr, SIZE);
-    printf("Maximum value is: %d \n", max);
+    printf("Maximum value is: %d \n", maximum(arr, SIZE));
+    if (find_value(arr, SIZE))
+    {
+        printf("It is found in the array.\n");
+    } else {
+        printf("It is not found in the array.\n");
+    }
+    
     return 0;
 }
+
