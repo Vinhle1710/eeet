@@ -62,7 +62,7 @@ int main(){
     } else {
         printf("It is not found in the array.\n");
     }
-    
+
     return 0;
 }
 
