@@ -59,7 +59,8 @@
   "files.associations": {
     "limits": "c",
     "string_view": "c",
-    "random": "c"
+    "random": "c",
+    "array": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
