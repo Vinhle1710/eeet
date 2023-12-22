@@ -4,6 +4,7 @@ Assume that the string src is always in a correct format and valid*/
 
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 char *months[] = {
     "January", "February", "March", "April", "May", "June", "July",
@@ -11,9 +12,31 @@ char *months[] = {
 };
 
 void convertDateFormat(const char *src, char *dest) {
+    
+    #if 0
+
     int day, month, year;
     sscanf(src, "%d/%d/%d", &day, &month, &year);
     sprintf(dest, "%d %s %d", day, months[month - 1], year);
+
+    #else
+
+    //Convert date
+    strncpy(dest, src, 2);
+    dest[2] = ' ';
+
+    //Get month name
+    int month = (src[3] - '0') * 10 + (src[4] - '0');
+    char *month_name = months[month - 1];
+
+    //Convert month
+    strcpy(dest + 3, month_name);
+    dest[3 + strlen(month_name)] = ' ';
+
+    //Convert year
+    strcat(dest, src + 6);
+
+    #endif
 }
 
 int main() {
