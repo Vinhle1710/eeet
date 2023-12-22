@@ -72,6 +72,44 @@ int main(){
     char *pos, temp[1000];
     int index, owlen = strlen(strSearch);
     
+    #if 1
+    // Change to #if 0 to see Method 2
+    
+    /* Method 1: Go through all elements, compare the substring starting at that
+     element with "find" string
+     --> if it matched, copy the "replace" string to that position
+     Note: only compare and and copy a number of characters (with strncmp and
+     strncpy)
+    */
+   
+    for (int i = 0; str2[i] != '\0'; i++) {
+        if (strncmp(str2 + i, strReplace, strlen(strSearch)) == 0) {
+            strncpy(str2 + i, strReplace, strlen(strReplace));
+        }
+    }
+    printf("Result: %s \n", str2);
+
+    #else
+    #if 1
+  /*  Method 2: From a student of the class
+      Use strstr() function to search the "find" string within str2
+      It will return the address of first matching position
+      --> copy the "replace" string into that address ()
+      Then, continue doing that, until there is no matching position (return
+     NULL).
+
+      Note: only copy a number of characters (with strncpy)
+  */
+    while (strstr(str2, strReplace) != NULL) {
+        char *position = strstr(str2, find);
+        strncpy(position, strReplace, strlen(strReplace));
+    } 
+    
+    printf("The result is %s\n", str2);
+    
+
+    #else
+
 
     while ((pos = strstr(str2, strSearch)) != NULL) {
         // Bakup current line
@@ -92,8 +130,10 @@ int main(){
         // oldword found index.
         strcat(str2, temp + index + owlen);
     }
-
     printf("New string: %s\n", str2);
+
+
+    #endif
 
     return 0;
 }
