@@ -24,7 +24,7 @@ void replace(char *s)
         } 
 
         //Replacing i with 1
-        else if (s[i] == 'i' || s[i] == 'I') 
+        else if (s[i] == 'l' || s[i] == 'L') 
         {
             s[i] = '1';
         } 
