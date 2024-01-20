@@ -34,7 +34,7 @@ float averageOfDigit(char* str){
         if ( isdigit( str[i] ) )
         {
             count ++;
-            sum += str[i] - 48;
+            sum += str[i] - '0';
         }
         
     }
@@ -57,31 +57,60 @@ int returnValue(char* str) {
 }
 
 int is_sub_array(int arr1[], int size1, int arr2[], int size2){
-    for (int i = 0; i < size1; i++){ //check for each element of arr1
-        int found = 0; //not found the current element of arr1 in arr2 yet
-
-        for (int j = 0; j < size2; j++){
-            if (arr2[j] == arr1[i]){ //found in arr2
+    for (int i = 0; i < size1; i++)
+    {
+        int found = 0;
+        
+        for (int j = 0; j < size2; j++)
+        {
+            if ( arr2[j] == arr1[i] )
+            {
                 found = 1;
             }
+            
+        }
+        if (found == 0)
+        {
+            return 0;
         }
 
-        if (found == 0){ //have not found after looking through all elements of arr2
-            return 0; //false to meet requirement
-        }
     }
+    
+    return 1;
 
-    return 1; //passed all checking above
 }
 
 int main(){
     char str[] = "12hello 35abc";
-    char Qc[] = "2539";
+    char Qc[] = "25392942";
     int arr1[] = {1, 3, 6, 2, 3};
-    int size1 = 5, size2 = 4;
-    int arr2[] = {1, 3, 2, 6}
-    printf("Length of string: %d\n", alphacount(str)); //Qa
-    printf("Average value of all digits in the string: %.1f\n", averageOfDigit(str)); //Qb
-    printf("Value of string is: %d\n", returnValue(Qc)); //Qc
+    int arr2[] = {1, 3, 2, 6};
+
+    int size1 = sizeof(arr1) / sizeof(arr1[0]);
+    int size2 = sizeof(arr2) / sizeof(arr2[0]);
+
+    //Qa
+    printf("Length of string: %d\n", alphacount(str)); 
     
+    //Qb
+    printf("Average value of all digits in the string: %.1f\n", averageOfDigit(str));
+    
+    //Qc
+    printf("Value of string is: %d\n", returnValue(Qc)); 
+    
+    //Qd
+    if ( is_sub_array(arr1, size1, arr2, size2) )
+    {
+        
+        printf("All elements of arr1 is found in arr2");
+
+    } 
+    else 
+    {
+        
+        printf("All elements of arr1 is not found in arr2");
+    
+    }
+    
+    return 0;
 }

@@ -1,36 +1,25 @@
+/*Define a truct namely Student which have two elements are name (string) and score (int).
+Define another struct namely Class which consist of an array of 3 students.
+a. Create a function which allow to input all information for a class
+b. Create a function which accepts a class and print out which student has highest score.
+Test all the functions in main().
+*/
+
 #include <stdio.h>
-#include <math.h>
-    
-    typedef struct { char name[100] ; int score; } Student;
-    
-    typedef struct { Student stuArr[3] } Class;
 
-void inputClassInfo(Class *cl){
-    for (int i = 0; i < 3; i++){ //loop through each student of the class
-        printf("\nEnter info for student %d: \n", i + 1);
-        printf("    Name: ");
-        scanf(" %[^\n]s", cl->stuArr[i].name);
+typedef struct { char name[100]; int score } Student;
+typedef struct { Student stuArr[4] } Class; 
 
-        printf("    Score: ");
-        scanf("%d", &(cl->stuArr[i].score) );
-    }
-}
-
-Student highScore(Class cl){
-    Student maxStu = cl.stuArr[0];
-    for (int i = 0; i < 3; i++)
+void inputClass(Class *c1) {
+    for (size_t i = 0; i < 4; i++) 
     {
-        if (cl.stuArr[i].score > maxStu.score)
-        {
-            maxStu = cl.stuArr[i]; 
-        }
-        
+        printf("\nInput info for student:");
+        printf("\n    Name: ");
+        scanf(" %[^n]s", c1);
     }
-    return maxStu;
+    
 }
 
 int main() {
-    Class class1;
-    inputClassInfo(&class1); //must pass by pointer to modify values inside the function
-    printf("Highest Score = %d", highScore(class1).score);
+
 }

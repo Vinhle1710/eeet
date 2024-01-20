@@ -31,9 +31,14 @@
         Point point1 = {3, 4};
         Point point2 = {6, 2};
         Point point3 = {8, 9};
+
         Triangle tri1 = {point1, point2, point3};
+
         pointShow(point1);
+
         printf("%f\n", pointDist(point1, point2));
+
         printf("%f\n", triangleArea(tri1));
+        
         return 0;
     }
