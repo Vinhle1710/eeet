@@ -26,6 +26,7 @@ int main (){
 
     //Create an array of 4 time values and ask the user to input values for them with correct format
     //above, then print out the latest time
+    
     TimePoint arr[4];
     
     for (int i = 0; i < 4; i++)
